@@ -66,6 +66,14 @@ pub fn new_xdai<'a, T: Into<SpecParams<'a>>>(params: T) -> Spec {
     )
 }
 
+/// Create a new Sparta chain spec.
+pub fn new_sparta<'a, T: Into<SpecParams<'a>>>(params: T) -> Spec {
+    load(
+        params.into(),
+        include_bytes!("../../res/chainspec/sparta.json"),
+    )
+}
+
 /// Create a new Volta mainnet chain spec.
 pub fn new_volta<'a, T: Into<SpecParams<'a>>>(params: T) -> Spec {
     load(
