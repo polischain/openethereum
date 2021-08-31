@@ -74,6 +74,14 @@ pub fn new_sparta<'a, T: Into<SpecParams<'a>>>(params: T) -> Spec {
     )
 }
 
+/// Create a new Olympus chain spec.
+pub fn new_olympus<'a, T: Into<SpecParams<'a>>>(params: T) -> Spec {
+    load(
+        params.into(),
+        include_bytes!("../../res/chainspec/olympus.json"),
+    )
+}
+
 /// Create a new Volta mainnet chain spec.
 pub fn new_volta<'a, T: Into<SpecParams<'a>>>(params: T) -> Spec {
     load(

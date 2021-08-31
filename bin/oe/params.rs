@@ -42,6 +42,7 @@ pub enum SpecType {
     Poanet,
     Xdai,
     Sparta,
+    Olympus,
     Volta,
     Ewc,
     Musicoin,
@@ -74,6 +75,7 @@ impl str::FromStr for SpecType {
             "poanet" | "poacore" => SpecType::Poanet,
             "xdai" => SpecType::Xdai,
             "sparta" => SpecType::Sparta,
+            "olympus" => SpecType::Olympus,
             "volta" => SpecType::Volta,
             "ewc" | "energyweb" => SpecType::Ewc,
             "musicoin" => SpecType::Musicoin,
@@ -101,6 +103,7 @@ impl fmt::Display for SpecType {
             SpecType::Poanet => "poanet",
             SpecType::Xdai => "xdai",
             SpecType::Sparta => "sparta",
+            SpecType::Olympus => "olympus",
             SpecType::Volta => "volta",
             SpecType::Ewc => "energyweb",
             SpecType::Musicoin => "musicoin",
@@ -128,6 +131,7 @@ impl SpecType {
             SpecType::Poanet => Ok(ethereum::new_poanet(params)),
             SpecType::Xdai => Ok(ethereum::new_xdai(params)),
             SpecType::Sparta => Ok(ethereum::new_sparta(params)),
+            SpecType::Olympus => Ok(ethereum::new_olympus(params)),
             SpecType::Volta => Ok(ethereum::new_volta(params)),
             SpecType::Ewc => Ok(ethereum::new_ewc(params)),
             SpecType::Musicoin => Ok(ethereum::new_musicoin(params)),
@@ -393,6 +397,7 @@ mod tests {
         assert_eq!(SpecType::Poanet, "poacore".parse().unwrap());
         assert_eq!(SpecType::Xdai, "xdai".parse().unwrap());
         assert_eq!(SpecType::Sparta, "sparta".parse().unwrap());
+        assert_eq!(SpecType::Olympus, "olympus".parse().unwrap());
         assert_eq!(SpecType::Volta, "volta".parse().unwrap());
         assert_eq!(SpecType::Ewc, "ewc".parse().unwrap());
         assert_eq!(SpecType::Ewc, "energyweb".parse().unwrap());
@@ -422,7 +427,7 @@ mod tests {
         assert_eq!(format!("{}", SpecType::Poanet), "poanet");
         assert_eq!(format!("{}", SpecType::Xdai), "xdai");
         assert_eq!(format!("{}", SpecType::Sparta), "sparta");
-        assert_eq!(format!("{}", SpecType::Sparta), "sparta");
+        assert_eq!(format!("{}", SpecType::Olympus), "olympus");
         assert_eq!(format!("{}", SpecType::Volta), "volta");
         assert_eq!(format!("{}", SpecType::Ewc), "energyweb");
         assert_eq!(format!("{}", SpecType::Musicoin), "musicoin");
