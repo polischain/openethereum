@@ -1,3 +1,20 @@
+## OpenEthereum v3.3.2
+
+Enhancements:
+* London hardfork block: Sokol (24114400)
+
+Bug fixes:
+* Fix for maxPriorityFeePerGas overflow
+
+## OpenEthereum v3.3.1
+
+Enhancements:
+* Add eth_maxPriorityFeePerGas implementation (#570)
+* Add a bootnode for Kovan
+
+Bug fixes:
+* Fix for modexp overflow in debug mode (#578)
+
 ## OpenEthereum v3.3.0
 
 Enhancements:
